@@ -18,6 +18,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * FXML Controller class
@@ -58,48 +61,83 @@ public class CalculadoraController extends MenuController implements Initializab
     @FXML
     private void somar(ActionEvent event) {
         
-    }
+        h.setValor1(Double.parseDouble(txtValor1.getText()));
+        h.setValor2(Double.parseDouble(txtValor2.getText()));
+        h.setResultado(h.getValor1()+h.getValor2());
+        h.setOperador("+");
+        
+        txtResultado.setText(Double.toString(h.getResultado()));
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula2");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(h);
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
+    }  
     
-    @FXML
-    private void showCalculadora(ActionEvent event) throws IOException {
-        Stage st = (Stage) btnHistorico.getScene().getWindow();
-        st.close();
-        
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/view/Calculadora.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),600,400);
-        Stage stage = new Stage();
-        stage.setTitle("Calculadora");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-    }
-
-    @FXML
-    private void showHistorico(ActionEvent event) throws IOException {
-        Stage st = (Stage) btnHistorico.getScene().getWindow();
-        st.close();
-        
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/view/Historico.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),600,400);
-        Stage stage = new Stage();
-        stage.setTitle("Historico");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-    }
 
     @FXML
     private void subtrair(ActionEvent event) {
+        h.setValor1(Double.parseDouble(txtValor1.getText()));
+        h.setValor2(Double.parseDouble(txtValor2.getText()));
+        h.setResultado(h.getValor1()-h.getValor2());
+        h.setOperador("-");
+        
+        txtResultado.setText(Double.toString(h.getResultado()));
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula2");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(h);
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
     }
 
     @FXML
     private void multiplicar(ActionEvent event) {
+        h.setValor1(Double.parseDouble(txtValor1.getText()));
+        h.setValor2(Double.parseDouble(txtValor2.getText()));
+        h.setResultado(h.getValor1()*h.getValor2());
+        h.setOperador("x");
+        
+        txtResultado.setText(Double.toString(h.getResultado()));
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula2");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(h);
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
     }
 
     @FXML
     private void dividir(ActionEvent event) {
+        h.setValor1(Double.parseDouble(txtValor1.getText()));
+        h.setValor2(Double.parseDouble(txtValor2.getText()));
+        h.setResultado(h.getValor1()/h.getValor2());
+        h.setOperador("/");
+        
+        txtResultado.setText(Double.toString(h.getResultado()));
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula2");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(h);
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
     }
     
 }

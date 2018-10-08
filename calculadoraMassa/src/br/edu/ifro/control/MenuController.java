@@ -44,7 +44,7 @@ public class MenuController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Calculadora");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.show();
     }
 
@@ -59,7 +59,7 @@ public class MenuController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Historico");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.show();
     }
     

@@ -2,7 +2,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
     <!-- unidade de persistencia com o nome aula -->
-    <persistence-unit name="aula">
+    <persistence-unit name="aula2">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Aqui são listadas todas as entidades -->

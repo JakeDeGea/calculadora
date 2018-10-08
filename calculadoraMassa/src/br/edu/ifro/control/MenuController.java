@@ -28,9 +28,6 @@ public class MenuController implements Initializable {
     @FXML
     private JFXButton btnHistorico;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

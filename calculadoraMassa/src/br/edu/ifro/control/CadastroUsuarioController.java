@@ -27,7 +27,6 @@ import javax.swing.JOptionPane;
  */
 public class CadastroUsuarioController implements Initializable {
     
-    private Usuario usuario;
     @FXML
     private JFXTextField txtUsuario;
     @FXML
@@ -49,17 +48,7 @@ public class CadastroUsuarioController implements Initializable {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula");
         EntityManager em = emf.createEntityManager();
         
-        if (usuario == null)
-            usuario = new Usuario();
-        
-        else{
-            Query query = em.createQuery("SELECT c FROM Usuario c WHERE c.id = :id");
-            query.setParameter("id", usuario.getId());
-            
-            usuario = (Usuario)query.getSingleResult();
-        }
-        
-//        Usuario usuario = new Usuario();
+        Usuario usuario = new Usuario();
         
         usuario.setNomeUsuario(txtUsuario.getText());
         usuario.setSenhaUsuario(txtSenha.getText());

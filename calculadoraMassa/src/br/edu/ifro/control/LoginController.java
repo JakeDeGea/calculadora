@@ -37,7 +37,7 @@ public class LoginController implements Initializable {
     private JFXPasswordField txtSenha;
     private Usuario user;
     @FXML
-    private JFXButton btnCadastrar;
+    private JFXButton btnEntrar;
     
     /**
      * Initializes the controller class.
@@ -47,7 +47,8 @@ public class LoginController implements Initializable {
         // TODO
     }    
 
-    private void VerificarUsuario(ActionEvent event) throws IOException {
+    @FXML
+    private void cadastrarUsuario(ActionEvent event) throws IOException {
                
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula");
         EntityManager em = emf.createEntityManager();
@@ -82,8 +83,5 @@ public class LoginController implements Initializable {
         
     }
 
-    @FXML
-    private void cadastrarUsuario(ActionEvent event) {
-    }
     
 }

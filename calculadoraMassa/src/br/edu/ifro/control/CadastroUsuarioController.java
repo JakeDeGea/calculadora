@@ -6,6 +6,9 @@
 package br.edu.ifro.control;
 
 import br.edu.ifro.model.Usuario;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,6 +28,12 @@ import javax.swing.JOptionPane;
 public class CadastroUsuarioController implements Initializable {
     
     private Usuario usuario;
+    @FXML
+    private JFXTextField txtUsuario;
+    @FXML
+    private JFXPasswordField txtSenha;
+    @FXML
+    private JFXButton btnCadastrar;
 
     /**
      * Initializes the controller class.
@@ -35,7 +44,7 @@ public class CadastroUsuarioController implements Initializable {
     }
     
     @FXML
-    private void salvarUser(ActionEvent event) {
+    private void cadastrarUsuario(ActionEvent event) {
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula");
         EntityManager em = emf.createEntityManager();
@@ -50,14 +59,10 @@ public class CadastroUsuarioController implements Initializable {
             usuario = (Usuario)query.getSingleResult();
         }
         
-        Usuario usuario = new Usuario();
+//        Usuario usuario = new Usuario();
         
-//        usuario.setNomeUser(txt.getText());
-//        usuario.setPermissaoUser(String.valueOf(cbxPermissaoUser.getValue()));
-//        usuario.setCpfUser(txtCpfUser.getText());
-//        usuario.setLoginUser(txtLoginUser.getText());
-//        usuario.setSenhaUser(txtSenhaUser.getText());
-        
+        usuario.setNomeUsuario(txtUsuario.getText());
+        usuario.setSenhaUsuario(txtSenha.getText());
         
         em.getTransaction().begin();
         em.persist(usuario);

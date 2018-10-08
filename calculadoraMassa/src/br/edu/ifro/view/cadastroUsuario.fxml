@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifro.control.CadastroUsuarioController">
+   <children>
+      <Text layoutX="89.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Novo Usuário" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="txtUsuario" layoutX="34.0" layoutY="136.0" prefHeight="17.0" prefWidth="262.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="34.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <JFXPasswordField fx:id="txtSenha" layoutX="34.0" layoutY="216.0" prefHeight="30.0" prefWidth="262.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btnCadastrar" layoutX="95.0" layoutY="289.0" onAction="#cadastrarUsuario" prefHeight="48.0" prefWidth="140.0" ripplerFill="#1d006b" style="-fx-background-color: lightgray;" text="Cadastrar" />
+   </children>
+</AnchorPane>
